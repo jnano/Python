@@ -1,0 +1,91 @@
+A. Github 연동하기
+1. git 생성하기
+    > git init //local git을 생성한다.(최초 1회만 작성)
+
+2. git에 추가할 파일 알려주기
+    > git add <file name>
+    // 파일을 로걸 리포지토리(local repositories:로컬저장소)에 추가한다.
+    // 만약 파일이 없다면 "> git touch <파일명>" 명령어를 작성하면 파일이 생성된다.
+    // 모든 파일을 추가하고 싶다면 "> git add ."을 이용하면 모든 수정파일이 추가된다.
+
+3. git에 변경사항 저장하기
+    > git commit -m "comment"
+
+4. github의 어느 장소에 올릴지 연동한다.
+    > git remote add <주소이름> <주소>
+    // 주소를 연동하면 앞으로 push를 할때 자동으로 기록된 주소로 변경사항이 저장된다.
+    // 연동된 주소가 보고싶다면 "> git remote -v"를 이용한다.
+
+5. github에 저장내용 올리기
+    > git push origin master
+    // github에 변경된 commit내용을 올린다.
+    // 처음 push를 하면 아이디와 비밀번호를 입력하라고 나온다. github아이디와 비밀번호를 입력하면 된다.
+
+6. git에 넣지 않을 파일 설정하기
+    // .gitignore라는 파일을 이용하여 git에 추가하지 않을 파일을 설정할 수 있다.
+    // git이 설정된 폴더 최상위에 넣어주면 된다.
+
+B. github에서 데이터 받아오기
+1. 데이터 갱신하기
+- 내가 회사와 집에서 작업을 한다면 현재 local git과 github의 commit버전이 다를 수 있다.
+- 내가 회사에서 커밋, 푸시를 하고왔다면 내역이 다를 것이다.
+- 이때 필요한 명령어이다.
+    > git pull origin master
+    // origin은 주소이름이다. 만약 내가 gitlab과 같은 것을 써서 gitlab이라고 등록했다면 
+    // origin부분은 gitlab으로 바꿔주면 된다.
+
+2. github에서 데이터 받아오기
+- 내가 집에서 시작해서 회사에서 이어서 하고싶다면 데이터를 받아와야한다.
+- 두번째 라면 위와 같이 pull명령어를 이용해서 받아올 수 있지만
+- 처음이라면 clone을 이용해서 받아와야 한다.
+    > git clone <주소>
+    // 받고 싶은 git repository 페이지에 가서 주소를 가져오면된다.
+
+C. git에 잘못 추가했을 때
+1. add를 잘못했을 때
+    > git reset 
+    // add내역을 취소한다.
+
+2. commit을 잘못했을 때
+    >
+
+D. 기존파일을 유지하며 기능을 추가할때
+- 기능을 추가하다보면 프로그램의 안정성이 저하될 수 있다.
+- 따라서 branch를 이용하여 기능을 개발하고 이상이 없을때 합칠 수 있다.
+
+1. branch 생성하기
+    >git branch <branch-name>
+2. branch 끼리 이동하기
+    > git checkout <branch-name>
+3. branch 만들고 이동
+    > git checkout -b <branch-name>
+4. branch 삭제
+    > git branch -d <branch-name>
+5. branch list 보기
+    > git branch 
+6. 나눠진 branch를 합칠때
+    > git marge <branch-name>
+
+E. git log 보기
+- 추가 명령어의 경우 뒤에 쭉이어 붙일 수 있다.
+
+1. 기본명령어
+    > git log
+2. 간략하게 줄이기
+    > git log --oneline
+3. graph로 보여주기
+    > git log --graph 
+
+F. 기타
+    > git -h // 짧은 버전
+    > git --help // 긴 버전
+
+G. 명령어 별칭 사용하기
+- oh-my-zsh 을 설치하면 사용할 수 있는 별칭입니다.
+
+> git add -> ga 
+> git add -A ->gaa
+> git status -> gst
+> git commit -m "commit" -> gc -m "commit"
+
+
